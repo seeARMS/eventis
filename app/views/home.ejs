@@ -1,0 +1,12 @@
+<%if(! isAuthed){ %>
+	<%- partial('partials/fblogin') %>
+<% } else { %>
+	<%- partial('partials/userinfo') %>
+	<%- partial('partials/logout') %>
+		<div class="row">
+			<%- partial('partials/events') %>
+			<%- partial('partials/interests') %>
+			<%- partial('partials/likes') %>
+		</div>
+<% } %>
+<script src="main.js"></script>
