@@ -6,7 +6,8 @@ var session = require('express-session');
 var cookieParser = require('cookie-parser');
 var partials = require('express-partials');
 //relative files
-var config = require('./config');
+var mode = process.argv[2] === 'prod' ? 'prod' : 'dev';
+var config = require('./config')(mode);
 var auth = require('./auth');
 var util = require('./middleware/util');
 var routes = require('./routes');
