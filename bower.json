@@ -1,0 +1,24 @@
+{
+  "name": "eventus",
+  "version": "0.0.1",
+  "homepage": "https://github.com/seeARMS/eventis",
+  "description": "eventus server",
+  "main": "app/app.js",
+  "authors": [
+    "emars"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/public/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.1",
+    "semantic-ui": "~1.0.1"
+  }
+}

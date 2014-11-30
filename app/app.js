@@ -1,11 +1,12 @@
 //Require mad shit
 var express = require('express');
 var app = express();
-var config = require('./config');
-var FB = require('fb');
+//middleware
 var session = require('express-session');
 var cookieParser = require('cookie-parser');
 var partials = require('express-partials');
+//relative files
+var config = require('./config');
 var auth = require('./auth');
 var util = require('./middleware/util');
 var routes = require('./routes');
