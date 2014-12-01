@@ -6,7 +6,7 @@ module.exports = (function(){
 	};	
 
 	//API ROUTES
-	var fbquery = function(req, res){
+	var fbUserQuery = function(req, res){
 		var query = '';
 		if(req.params.query){
 			query ='/'+req.params.query;	
@@ -21,6 +21,16 @@ module.exports = (function(){
 		});
 	};	
 
+	var fbQuery = function(req, res){
+		var query = req.params.query;
+		var token = req.session.passport.user.token;
+		FB.api(query,{
+			access_token: token
+		}, function(fbres){
+			res.json(fbres);
+		});
+	};
+
 	var authed = function(req, res){
 		var json = {};
 		if(req.session.passport.user){
@@ -34,7 +44,8 @@ module.exports = (function(){
 	return {
 		index: index,		
 		api: {
-			fbquery: fbquery,
+			fbUserQuery: fbUserQuery,
+			fbQuery: fbQuery,
 			authed: authed
 		}
 	};

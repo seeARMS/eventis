@@ -13,6 +13,7 @@ var util = require('./middleware/util');
 var routes = require('./routes');
 
 //Set Embedded JavaScript as View Engine
+app.set('views', __dirname+'/views');
 app.set('view options', {defaultLayout: 'layout'});
 app.set('view engine', 'ejs');
 
@@ -31,7 +32,8 @@ app.use(util.authSession);
 app.get('/', routes.index);
 //API Routes
 app.get('/authed', routes.api.authed);
-app.get('/me/:query?', routes.api.fbquery);
+app.get('/me/:query?', routes.api.fbUserQuery);
+app.get('/fb/:query', routes.api.fbQuery);
 
 //Facebook Auth
 app.get('/fbauth', auth.authenticate('facebook', {

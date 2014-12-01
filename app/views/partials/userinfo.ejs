@@ -1,10 +1,8 @@
 <h5>
 	id: 
-	<%= user.id %> - 
-	<%= user.displayName %>
+	<a href="#<%= user.id %>" id="user"><%= user.displayName %></a>
 </h5>
 <h5>
 	location:
-	<%= user._json.location.id %>
-	<%= user._json.location.name %>
+	<a href="#<%= user._json.location.id %>" id="location"><%= user._json.location.name %></a>
 </h5>

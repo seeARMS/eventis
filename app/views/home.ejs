@@ -3,10 +3,15 @@
 <% } else { %>
 	<%- partial('partials/userinfo') %>
 	<%- partial('partials/logout') %>
-		<div class="row">
-			<%- partial('partials/events') %>
-			<%- partial('partials/interests') %>
-			<%- partial('partials/likes') %>
-		</div>
+	<div class="row" style="margin-top:25px">
+	<div class="col-sm-6">
+	<%- partial('partials/events') %>
+	<%- partial('partials/interests') %>
+	<%- partial('partials/likes') %>
+	<%- partial('partials/friends') %>
+	</div>
+	<div class="col-sm-6">
+	<%- partial('partials/data') %>
+	</div>
 <% } %>
 <script src="main.js"></script>
